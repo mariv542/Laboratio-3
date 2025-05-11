@@ -1,12 +1,17 @@
-﻿namespace Lab3.Models.domain
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Lab3.Models.domain
 {
     public class ProductoNoPerecible : Producto
     {
-        public Envasado Envasado { get; set; }
+        [Required]
+        [StringLength(120)]
+        [Display(Name = "Nombre del envasado")]
+        public Envasado TipoEnvasado { get; set; }
        
-        public ProductoNoPerecible( Envasado envasado)
+        public ProductoNoPerecible( Envasado tipoEnvasado)
         {
-            Envasado = envasado;
+            TipoEnvasado = tipoEnvasado;
         }
        
     }
