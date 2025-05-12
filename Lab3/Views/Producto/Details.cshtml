@@ -1,0 +1,28 @@
+﻿@model Lab3.Models.domain.Producto
+  
+@{
+	ViewData["Title"] = "Detalles del producto";
+}
+
+<h2 class="mb-4 text-center" style="color:#d63384;">Detalle del Producto</h2>
+
+<div class="card p-3" style="background-color: #fff0f5; border: 1px solid #f8bbd0; border-radius: 10px; box-shadow: 0 0 10px rgba(214, 51, 132, 0.15);">
+    <dl class="row">
+        <dt class="col-sm-3" style="color:#c2185b;">Nombre</dt>
+        <dd class="col-sm-9">@Model.Nombre</dd>
+
+        <dt class="col-sm-3" style="color:#c2185b;">Código de Barra</dt>
+        <dd class="col-sm-9">@Model.CodigoDeBarra</dd>
+
+        <dt class="col-sm-3" style="color:#c2185b;">Precio</dt>
+        <dd class="col-sm-9">$@Model.Precio</dd>
+
+        <dt class="col-sm-3" style="color:#c2185b;">Cantidad Disponible</dt>
+        <dd class="col-sm-9">@Model.CantidadDisponible</dd>
+
+        <dt class="col-sm-3" style="color:#c2185b;">Disponible</dt>
+        <dd class="col-sm-9">@(Model.Estado ? "Sí" : "No")</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn mt-3" style="background-color: #e91e63; color: white;">Volver a la lista</a>

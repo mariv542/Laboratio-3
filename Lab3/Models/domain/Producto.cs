@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Primitives;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Lab3.Models.domain
 {
@@ -8,7 +7,7 @@ namespace Lab3.Models.domain
         [Required]
         [StringLength(120)]
         [Display (Name = "Nombre del producto")]
-        public string Name { get; set; }
+        public string Nombre { get; set; }
 
 
         [Required]
@@ -24,16 +23,15 @@ namespace Lab3.Models.domain
         [Display(Name = "Cantidad disponible")]
         public int CantidadDisponible { get; set; }
 
-        [Required]
         [Display(Name = "Estado")]
         public bool Estado { get; set; } 
 
         public Producto() { 
         }
         
-        public Producto (string name, string codigoDeBarra, int precio, int cantidadDisponible, bool estado)
+        public Producto (string nombre, string codigoDeBarra, int precio, int cantidadDisponible, bool estado)
         {
-            Name = name;
+            Nombre = nombre;
             CodigoDeBarra = codigoDeBarra;
             Precio = precio;
             CantidadDisponible = cantidadDisponible;

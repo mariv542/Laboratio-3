@@ -1,0 +1,39 @@
+﻿@model List<Lab3.Models.domain.Producto>
+
+@{
+	ViewData["Title"] = "Lista de Productos";
+}
+
+<h2 class="mb-4 text-center" style="color: #d63384;">Lista de Productos</h2>
+
+<p>
+    <a asp-action="Create" class="btn" style="background-color: #e91e63; color: white;">Agregar Nuevo Producto</a>
+</p>
+
+<table class="table table-striped" style="background-color: #fff0f5; border: 1px solid #f8bbd0;">
+    <thead style="background-color: #f8bbd0;">
+        <tr style="color: #880e4f;">
+            <th>Nombre</th>
+            <th>Código de Barra</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Disponible</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.CodigoDeBarra</td>
+                <td>$@item.Precio</td>
+                <td>@item.CantidadDisponible</td>
+                <td>@(item.Estado ? "Sí" : "No")</td>
+                <td>
+                    <a asp-action="Details" asp-route-codigoDeBarras="@item.CodigoDeBarra" class="btn btn-sm" style="background-color: #f06292; color: white;">Ver detalles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
