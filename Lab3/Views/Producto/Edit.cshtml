@@ -1,0 +1,41 @@
+﻿@model Lab3.Models.domain.Producto
+
+@{
+    ViewData["Title"] = "Editar Producto";
+}
+
+<h2 style="color: #d63384;">Editar Producto</h2>
+
+<form asp-action="Edit" method="post" style="background-color: #fff0f5; padding: 20px; border-radius: 10px; border: 1px solid #f8d7da;">
+    <input type="hidden" name="CodigoDeBarra" value="@Model.CodigoDeBarra" />
+
+    <div class="mb-3">
+        <label asp-for="Nombre" class="form-label" style="color: #c2185b;"></label>
+        <input asp-for="Nombre" class="form-control" style="border-color: #f8bbd0;" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Precio" class="form-label" style="color: #c2185b;"></label>
+        <input asp-for="Precio" class="form-control" style="border-color: #f8bbd0;" />
+        <span asp-validation-for="Precio" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CantidadDisponible" class="form-label" style="color: #c2185b;"></label>
+        <input asp-for="CantidadDisponible" class="form-control" style="border-color: #f8bbd0;" />
+        <span asp-validation-for="CantidadDisponible" class="text-danger"></span>
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="Estado" class="form-check-input" style="accent-color: #e91e63;" />
+        <label asp-for="Estado" class="form-check-label" style="color: #c2185b;"></label>
+    </div>
+
+    <button type="submit" class="btn" style="background-color: #e91e63; color: white;">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-light border" style="color: #e91e63; border-color: #e91e63;">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -31,7 +31,9 @@
                 <td>@item.CantidadDisponible</td>
                 <td>@(item.Estado ? "Sí" : "No")</td>
                 <td>
-                    <a asp-action="Details" asp-route-codigoDeBarras="@item.CodigoDeBarra" class="btn btn-sm" style="background-color: #f06292; color: white;">Ver detalles</a>
+                    <a asp-action="Details" asp-route-codigo="@item.CodigoDeBarra" class="btn btn-info btn-sm">Ver detalles</a>
+                    <a asp-action="Edit" asp-route-codigo="@item.CodigoDeBarra" class="btn btn-btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-codigo="@item.CodigoDeBarra" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
             </tr>
         }

@@ -1,0 +1,32 @@
+﻿@model Lab3.Models.domain.Producto
+
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<h2 style="color: #d63384;">¿Estás seguro que deseas eliminar este producto?</h2>
+
+<div class="card p-3" style="border: 1px solid #f8d7da; background-color: #fff0f5;">
+    <dl class="row">
+        <dt class="col-sm-3" style="color: #c2185b;">Nombre</dt>
+        <dd class="col-sm-9">@Model.Nombre</dd>
+
+        <dt class="col-sm-3" style="color: #c2185b;">Código de Barra</dt>
+        <dd class="col-sm-9">@Model.CodigoDeBarra</dd>
+
+        <dt class="col-sm-3" style="color: #c2185b;">Precio</dt>
+        <dd class="col-sm-9">$@Model.Precio</dd>
+
+        <dt class="col-sm-3" style="color: #c2185b;">Cantidad Disponible</dt>
+        <dd class="col-sm-9">@Model.CantidadDisponible</dd>
+
+        <dt class="col-sm-3" style="color: #c2185b;">Disponible</dt>
+        <dd class="col-sm-9">@(Model.Estado ? "Sí" : "No")</dd>
+    </dl>
+</div>
+
+<form asp-action="DeletePost" method="post" class="mt-3">
+    <input type="hidden" name="codigoDebarras" value="@Model.CodigoDeBarra" />
+    <button type="submit" class="btn" style="background-color: #e91e63; color: white;">Eliminar</button>
+    <a asp-action="Index" class="btn btn-light border" style="color: #e91e63; border-color: #e91e63;">Cancelar</a>
+</form>
